@@ -10,6 +10,10 @@ Until now we have:
 
 	Creates new Copasi files with changed targets for FCC optimization.
 
+* **extractMCAOptimizationResults.py** (python3)
+
+	Extracts results from MCA optimizations.
+
 * **parallelCopasi.py** (python3, depends on copasi.py and GNU parallel)
 
 	Copies a given Copasi file n times while changing the optimization output file name. Then sends every copy to GNU parallel for parallel execution.

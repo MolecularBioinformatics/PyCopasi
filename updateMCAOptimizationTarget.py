@@ -14,7 +14,7 @@ Start the script e.g. like this:
 ./updateMCAOptimizationTarget.py myCopasiFile.cps 4,6,ReactA all'''
 
 
-import sys					# To exit
+import sys
 from copasi import Copasi	# Copasi class for all modifications
 import argparse				# To parse arguments
 
