@@ -8,7 +8,7 @@ Until now we have:
 
 * **updateMCAOptimizationTarget.py** (python3, depends on copasi.py)
 
-	Creates new Copasi files with changed targets for FCC optimization. With flag -s for use with Stallo jobarrays.
+	Creates new Copasi files with changed targets for FCC optimization.
 
 * **parallelCopasi.py** (python3, depends on copasi.py and GNU parallel)
 

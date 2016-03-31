@@ -38,8 +38,8 @@ parser.add_argument('infile', metavar='myfile.cps', help='Copasi file that shall
 parser.add_argument('objLeft', type=makeList, metavar='rows', help='The parameters of rows that shall be changed. These can be numbers, names or both, seperated by kommas (,). May also be "all" without quotation marks to address all parameters.')
 # List of column parameters
 parser.add_argument('objRight', type=makeList, metavar='columns', help='The parameters of columns that shall be changed. See "rows" for details.')
-# Optionally, we take a switch to use Stallo instead of a local system
-parser.add_argument('-s', '--stallo', action='store_true', help='If active, Copasi filenames are just numbered and not changed to meaningful names. This implies -n.')
+# Optionally, we take a switch to use a server Jobarray instead of a local system
+parser.add_argument('-j', '--jobarray', action='store_true', help='If active, Copasi filenames are just numbered and not changed to meaningful names. This implies -n.')
 # Optionally, we take a switch whether to run the generated files or not
 parser.add_argument('-n', '--norun', action='store_true', help='If active, Copasi files are just generated but Copasi is not started.')
 args = parser.parse_args()
@@ -48,8 +48,8 @@ args = parser.parse_args()
 objectiveleft = args.objLeft
 objectiveright = args.objRight
 
-# if the files are prepared for stallo, we don't want to run them anyway on the local computer
-if args.stallo:
+# if the files are prepared for a jobarray, we don't want to run them anyway on the local computer
+if args.jobarray:
 	args.norun = True
 
 # create a basefile that is the infile without ending
@@ -108,7 +108,7 @@ for objleft in objectiveleft:
 
 		outfilebase = basefile + '_' + lefttype[objleft] + '_' + righttype[objright]
 
-		if args.stallo:
+		if args.jobarray:
 			outfilebase += '_' + str(i)
 
 		# replace the original reactions/metabolites with the new ones
