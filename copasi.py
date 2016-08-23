@@ -77,7 +77,7 @@ class Copasi:
 		:returns: Whether or not the given Copasi version is compatible with this script (bool)
 		"""
 
-		return self.version in self.validVersions
+		return self.version in self.testedVersions
 
 
 	def openCopasiFile(self):
