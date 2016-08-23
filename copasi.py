@@ -2,6 +2,7 @@
 
 import sys						# For exiting and stderr printing
 import re						# Regular expressions
+import os.path					#Common path name manipulations
 import subprocess				# To start subprocesses like GNU parallel or Copasi
 from datetime import datetime	# To get a feeling of time
 from shutil import which		# To check whether a given Copasi program name is valid
@@ -196,9 +197,11 @@ class Copasi:
 		if exitCode > 0:
 			cpsError = 'WITH EXIT CODE {} (i.e. an error occured)'.format(exitCode)
 		else:
-			cpsError = 'without error'
+                    cpsError = 'without error'
 
-		with open('AA_FINISHED_' + self.filename.replace('.cps', ''), 'w') as f:
+		dirname = os.path.dirname(self.filename)
+		basename = os.path.basename(os.path.splitext(self.filename)[0])
+		with open(os.path.join(dirname,'AA_FINISHED_' + basename) , 'w') as f:
 			f.write('CopasiSE finished {} the following files in {}:\n\n{}\n\nNothing more to do.'.format(cpsError, str(totalTime), '\n'.join(fileList)))
 
 
