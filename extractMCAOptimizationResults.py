@@ -25,7 +25,7 @@ for filename in sys.argv[1:]:
 				value = line.split('\t')[1].strip()
 				if scan not in results:
 					results[scan] = []
-				results[scan].append('\t'.join(row, column, value))
+				results[scan].append('\t'.join((row, column, value)))
 
 for scan in sorted(results.keys()):
 	outfile = scan + '_summary.txt'
