@@ -1,7 +1,5 @@
 This repo contains various scripts to make modelling with Copasi easier. All Python scripts (except for `copasi.py`) can be called with -h or --help to get instructions.
 
-Until now we have:
-
 * **copasi.py** (python3; not for direct call)
 
 	Contains the Copasi class that is used by many other scripts. This script is thought to be imported by other python scripts.
@@ -9,6 +7,10 @@ Until now we have:
 * **updateMCAOptimizationTarget.py** (python3, depends on copasi.py)
 
 	Creates new Copasi files with changed targets for FCC optimization.
+
+* **extractFluxConcFromResults.py** (python3)
+
+	Extracts species concentrations and reaction fluxes from steady state results.
 
 * **extractMCAOptimizationResults.py** (python3)
 
